@@ -1,6 +1,6 @@
 import React, { Fragment, useState, useEffect } from "react";
 import EditTodo from "./EditTodo";
-import API_BASE from "./api.js";
+import API_BASE from "../api";
 
 const ListTodos = () => {
 
