@@ -1,25 +1,29 @@
-import React, { Fragment, useState } from "react"
+import React, { Fragment, useState } from "react";
 
 const InputTodo = () => {
-
   const [description, setDescription] = useState("");
+
+  // 👇 Base URL switches automatically between localhost and Render
+  const API_BASE =
+    window.location.hostname === "localhost"
+      ? "http://localhost:5000"
+      : "https://your-server.onrender.com"; // replace with your Render server URL
 
   const onSubmitForm = async (e) => {
     e.preventDefault();
     try {
       const body = { description };
-      const response = await fetch("http://localhost:5000/todos", {
+      const response = await fetch(`${API_BASE}/todos`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body)
+        body: JSON.stringify(body),
       });
 
       window.location = "/";
     } catch (err) {
-      console.error(err.message)
+      console.error(err.message);
     }
-
-  }
+  };
 
   return (
     <Fragment>
@@ -40,7 +44,6 @@ const InputTodo = () => {
       </div>
     </Fragment>
   );
-
-}
+};
 
 export default InputTodo;
