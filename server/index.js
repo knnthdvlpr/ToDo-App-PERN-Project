@@ -5,7 +5,9 @@ const cors = require("cors");
 const pool = require("./db");
 
 //middleware
-app.use(cors());
+app.use(cors({
+  origin: "*"
+}));
 app.use(express.json()); //req.body
 
 //ROUTES//
