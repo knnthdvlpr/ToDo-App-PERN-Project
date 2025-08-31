@@ -94,3 +94,7 @@ app.get("/test-db", async (req, res) => {
     res.status(500).send("DB error");
   }
 });
+
+app.get("/", (req, res) => {
+  res.send("API is running 🚀");
+});
