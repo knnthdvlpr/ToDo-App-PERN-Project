@@ -8,7 +8,7 @@ const ListTodos = () => {
   const API_BASE =
     window.location.hostname === "localhost"
       ? "http://localhost:5000"
-      : "https://your-server.onrender.com"; // replace with your Render server URL
+      : "https://todo-app-pern-azwk.onrender.com/"; // replace with your Render server URL
 
   const deleteTodo = async (id) => {
     try {
