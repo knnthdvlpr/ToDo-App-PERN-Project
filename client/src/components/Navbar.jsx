@@ -6,6 +6,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-logo">
         <img src={logo} alt="Logo" />
+        <span>ToDo App</span>
       </div>
     </nav>
   );
